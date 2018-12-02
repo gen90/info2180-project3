@@ -37,8 +37,9 @@
         $row = $check->fetch(PDO::FETCH_ASSOC);
         if($check->rowCount()==1){
             if(password_verify($pword,$row['password'])){
-                $_SESSION['login_user']=$username;
-                header('location: home.html');
+                $_SESSION['login_user']=$user;
+                $_SESSION['id']= $row['id'];
+                header('location: dashboard.php');
             }
             else{
                array_push($errors, "Invalid Password"); 
@@ -87,8 +88,12 @@ if (isset($_POST['submit_reg'])) {
   	$password = password_hash($password, PASSWORD_DEFAULT);//encrypt the password before saving in the database
   	 $check = $conn->prepare("INSERT INTO Users (email, password,firstname,lastname,telephone,date_joined) VALUES('$email', '$password','$fname','$lname','$tel','$dateJoined')");
   	 $check -> execute();
-  	$_SESSION['username'] = $username;
-  //	$_SESSION['success'] = "You are now logged in";
-  	header('location: home.html');
+//   	 $check = $conn->query("SELECT * FROM Users WHERE email = '$email'");
+//     $row = $check->fetch(PDO::FETCH_ASSOC);
+  	
+//   	$_SESSION['login_user'] = $email;
+//   	$_SESSION['id']= $row['id'];
+//   	header('location: dashboard.php');
   }
 }
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HireMe</title>
+        <link rel="stylesheet" href="newjob.css" type="text/css" />
+        <?php include('schema.php')?>
+    </head>
+    <body>
+        <header>HireMe</header>
+        <div id = "overall">
+            <div id = "options">
+                    <div id="home">
+                        <img src=""></img>
+                        <p>Home</p>
+                    </div>
+                    <div id="add">
+                        <img src=""></img>
+                        <p>Add User</p>
+                    </div>
+                    <div id="new">
+                        <img src=""></img>
+                        <p>New Job</p>
+                    </div>
+                    <div id="logout">
+                        <img src=""></img>
+                        <p ><button name="logout">Logout</button></p>
+                    </div>
+            </div>
+            <div id = "sidebar">
+                <h1>New Job</h1>
+                <form method= 'POST' action= "newjob.php">
+                    Job Title
+                    <input type="text" name="jtitle" placeholder="e.g. Senior Designer or Product Manager"/><br/>
+                    Job Description
+                    <input id = "jobdesc" type="text" name="jdescription" />
+                    Category 
+                    <select id="catslctr" name= "category">Select a Category 
+                        <option value= "">(Choose a category)</option>
+                        <option value= "Design"> Design</option>
+                        <option value= "Programming"> Programming</option>
+                        <option value= "DevOps & Sysadmin"> DevOps & Sysadmin</option>
+                        <option value= "Customer Support"> Customer Support</option>
+                        <option value= "Sales & Marketing"> Sales & Marketing</option>
+                    </select>    
+                    Company
+                    <input type="text" name="company"/>
+                    Job Location
+                    <input type="text" name="jlocat" placeholder="e.g. Kingston Jamaica"/><br/>
+                    <input id = "submit" type="submit" name="submit"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

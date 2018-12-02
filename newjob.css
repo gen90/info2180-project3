@@ -1,0 +1,61 @@
+header {
+    height: 40px;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#overall {
+    display: grid;
+    grid-template-columns: 300px 900px;
+}
+
+#options {
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #EEE;
+    color: black;
+    height: 100%;
+}
+
+form input {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+select {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#jobdesc {
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+#submit {
+    width: 100px;
+    height: 30px;
+    padding-top: 0px;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    border: thin;
+}
+
+#sidebar {
+    padding: 10px 20px 0px 20px;
+    font-family: sans-serif;
+}

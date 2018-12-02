@@ -1,0 +1,52 @@
+header {
+    height: 40px;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 300px 900px;
+}
+
+#options {
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #EEE;
+    color: black;
+    height: 100%;
+}
+
+h1 {
+    display: inline;
+    padding-right: 500px;
+    padding-left: 10px;
+    padding-top: 3em;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+#post{
+    border-radius: 5px;
+    height: 35px;
+    width: 130px;
+    background-color: limegreen;
+    color: white;
+    border: thin;
+}
+
+#sidebar {
+    padding: 10px 10px 0px 10px;
+    font-family: sans-serif;
+}
+
+li {
+    padding-bottom: 10px;
+}

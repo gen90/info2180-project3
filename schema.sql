@@ -18,8 +18,8 @@ CREATE TABLE `Jobs`(
     `id` int(3) NOT NULL auto_increment,
     `job_title` char(35) NOT NULL default '',
     `job_description` char(255) NOT NULL default '',
-    `category` char(35) NOT NULL default '',
-    `company_name` char(35) NOT NULL default '',
+    `category` char(50) NOT NULL default '',
+    `company_name` char(50) NOT NULL default '',
     `company_location` char(100) NOT NULL default '',
     `date_posted` date NOT NULL,
     PRIMARY KEY (`id`)

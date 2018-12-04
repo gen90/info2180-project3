@@ -23,8 +23,9 @@
   // to login 
    if(isset($_POST['submit_login'])){
 
-        $user = $_POST['username'];
-        $pword = $_POST['password'];
+        $user = strip_tags($_POST['username']);
+        $pword = strip_tags($_POST['password']);
+        
         if (empty($user)) {
   	        array_push($errors, "Username is required");
         }
@@ -55,11 +56,11 @@
 //register user
 if (isset($_POST['submit_reg'])) {
   // receive all input values from the form
-  $fname =$_POST['fname'];
-  $lname = $_POST['lname'];
-  $email =$_POST['email'];
-  $password = $_POST['password'];
-  $tel = $_POST['telephone'];
+  $fname = strip_tags($_POST['fname']);
+  $lname = strip_tags($_POST['lname']);
+  $email = strip_tags($_POST['email']);
+  $password = strip_tags($_POST['password']);
+  $tel = strip_tags($_POST['telephone']);
       date_default_timezone_set('UTC');
     $dateJoined = date('Y/m/d', time());
     $errors = array();

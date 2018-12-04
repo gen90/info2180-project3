@@ -1,12 +1,11 @@
 <?php
     include "schema.php";
-    $user = $_SESSION['login_user'];
-    echo $user;
-    $jobName = $_POST["jtitle"];
-    $desc = $_POST["jdescription"];
-    $category = $_POST["category"];
-    $company = $_POST["company"];
-    $location = $_POST["jlocat"];
+
+    $jobName = strip_tags($_POST["jtitle"]);
+    $desc = strip_tags($_POST["jdescription"]);
+    $category = strip_tags($_POST["category"]);
+    $company = strip_tags($_POST["company"]);
+    $location = strip_tags($_POST["jlocat"]);
     $datePosted= date('Y/m/d', time());
     
     $insert=  $conn -> prepare("INSERT INTO Jobs (job_title, job_description, category, 

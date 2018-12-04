@@ -95,7 +95,10 @@
                             $appJob= "SELECT job_id, date_applied FROM `Job Applied For` WHERE user_id = {$_SESSION['id']};";
                             $jobIDs = $conn->query($appJob);
                             $jobIDs->setFetchMode(PDO::FETCH_ASSOC);
-                            
+                             if($jobIDs->rowCount()==0){
+                                print "<p>You have not Applied to Any Jobs</p>";
+                            }
+                            else{
                             print "<form  method='post' name='appjobTrig' action='jobdetails.php' >";
                             print "<input type='hidden' name='appjobIn' value='' >";
                             print "</form>";
@@ -106,7 +109,7 @@
                             <th>Date Applied</th>
                             <th></th>
                         </tr>";
-                            
+                           
                             foreach($jobIDs as $row){
                                 $jobDet = $conn-> query("SELECT id, company_name, job_title, category, date_posted FROM Jobs WHERE id= {$row['job_id']};");
                                 $jobData= $jobDet -> fetch(PDO::FETCH_ASSOC);
@@ -121,6 +124,7 @@
                                 print "<td>$catAp</td>";
                                 print "<td>$dateAp</td>";
                                 print " </tr> ";
+                            }
                             }
                         }catch (PDOException $ex){ echo "No jobs Applied for Yet";}
                             

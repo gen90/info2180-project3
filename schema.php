@@ -13,8 +13,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $hash = password_hash('password123',PASSWORD_DEFAULT);
     $check = $conn->query("SELECT * FROM Users");
-    //  $statement = $conn -> prepare("INSERT INTO Users (password, email) VALUES ('$hash', 'admin@hireme.com')");
-    //      $statement -> execute();
+
     if ($check->rowCount() === 0){
         $statement = $conn -> prepare("INSERT INTO Users (password, email) VALUES ('$hash', 'admin@hireme.com')");
         $statement -> execute();
@@ -34,9 +33,12 @@
         }
 
   if (count($errors) == 0) {
-        $check = $conn->query("SELECT * FROM Users WHERE email='$user'");
+        $check = $conn->prepare("SELECT * FROM Users WHERE email=:email");
+        $check-> bindValue(':email', $user, PDO::PARAM_STR);
+        $check-> execute();
         $row = $check->fetch(PDO::FETCH_ASSOC);
         if($check->rowCount()==1){
+            
             if(password_verify($pword,$row['password'])){
                 $_SESSION['login_user']=$user;
                 $_SESSION['id']= $row['id'];
@@ -77,7 +79,9 @@ if (isset($_POST['submit_reg'])) {
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
 
-  $check = $conn->query("SELECT * FROM Users WHERE email = '$email'");
+  $check = $conn->prepare("SELECT * FROM Users WHERE email = :email");
+  $check -> bindValue(':email', $email, PDO::PARAM_STR);
+  $check -> execute();
   $row = $check->fetch(PDO::FETCH_ASSOC);
   
   if ($check->rowCount()>0) { // if user exists
@@ -87,13 +91,14 @@ if (isset($_POST['submit_reg'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = password_hash($password, PASSWORD_DEFAULT);//encrypt the password before saving in the database
-  	 $check = $conn->prepare("INSERT INTO Users (email, password,firstname,lastname,telephone,date_joined) VALUES('$email', '$password','$fname','$lname','$tel','$dateJoined')");
+  	 $check = $conn->prepare("INSERT INTO Users (email, password,firstname,lastname,telephone,date_joined) VALUES(:email, :password,:fname,:lname,:tel,'$dateJoined')");
+  	 $check -> bindValue(':email', $email, PDO::PARAM_STR);
+  	 $check -> bindValue(':password', $password, PDO::PARAM_STR);
+  	 $check -> bindValue(':fname', $fname, PDO::PARAM_STR);
+  	 $check -> bindValue(':lname', $lname, PDO::PARAM_STR);
+  	 $check -> bindValue(':tel', $tel, PDO::PARAM_STR);
   	 $check -> execute();
-//   	 $check = $conn->query("SELECT * FROM Users WHERE email = '$email'");
-//     $row = $check->fetch(PDO::FETCH_ASSOC);
-  	
-//   	$_SESSION['login_user'] = $email;
-//   	$_SESSION['id']= $row['id'];
+
   	header('location: dashboard.php');
   }
 }

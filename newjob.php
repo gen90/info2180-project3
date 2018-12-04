@@ -1,6 +1,7 @@
 <?php
     include "schema.php";
-    
+    $user = $_SESSION['login_user'];
+    echo $user;
     $jobName = $_POST["jtitle"];
     $desc = $_POST["jdescription"];
     $category = $_POST["category"];

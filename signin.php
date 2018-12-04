@@ -11,7 +11,7 @@
             <div id="main">
                 <h1>User Login</h1>
                 <form method="post" action = "signin.php">
-                    <?php include ('schema.php') ?>
+                   
                     <p>Email</p>
                     <input type="username" id="user" name = "username" required/>
                     <p>Password</p>
@@ -23,6 +23,7 @@
                    <?php if(!empty($errors)) {foreach ($errors as $er){echo $er;}}?>
                 </div>
             </div>
+            <div id="footer"></div>
 
         </div>
     </body>

@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>HireMe</header>
-
+        <?php if($_SESSION[login_user]!="admin@hireme.com"){header('location: dashboard.php');} ?>
 
             <div id="main">
                 <h1>User Registration</h1>

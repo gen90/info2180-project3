@@ -93,7 +93,7 @@ if (isset($_POST['submit_reg'])) {
   	
 //   	$_SESSION['login_user'] = $email;
 //   	$_SESSION['id']= $row['id'];
-//   	header('location: dashboard.php');
+  	header('location: dashboard.php');
   }
 }
 

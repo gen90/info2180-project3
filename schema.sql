@@ -25,7 +25,7 @@ CREATE TABLE `Jobs`(
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `Job Apied For`(
+CREATE TABLE `Job Applied For`(
     `id` int(3) NOT NULL auto_increment,
     `job_id` int NOT NULL,
     `user_id` int NOT NULL,

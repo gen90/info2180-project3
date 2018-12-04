@@ -9,6 +9,8 @@
             $jobQ = $conn->query("SELECT * FROM Jobs WHERE id='$id'");
             $job = $jobQ->fetch(PDO::FETCH_ASSOC);
             $_SESSION['jobID']= $job['id'];
+            $title = $job['job_title'];
+            print "<title>Job - $title</title>";
        ?>
     </head>
     <body>
@@ -18,7 +20,7 @@
                 <ul>
                     <li><a href="dashboard.php">Home</a></li>
                     <?php if($_SESSION['login_user']=="admin@hireme.com"){ print '<li><a href="signup.php">Add User</a></li>';} ?>
-                    <li><a href="jobapp.php">New Job</a></li>
+                    <li><a href="newjob.html">New Job</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>

@@ -17,13 +17,13 @@ header {
 #main {
     display: grid;
     grid-template-columns: 300px 900px;
-    margin-top:1em;
+    /*margin-top:1em;*/
 }
 
 #options {
     /*margin-top:1em;*/
     font-family: sans-serif;
-    /*padding-top: 10px;*/
+    padding-top: 10px;
     padding-left: 20px;
     background-color: #EEE;
     color: black;

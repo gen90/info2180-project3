@@ -1,3 +1,8 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:sans-serif;
+}
 header {
     height: 40px;
     background-color: black;
@@ -5,7 +10,7 @@ header {
     padding-top: 20px;
     padding-left: 15px;
     font-size: 20px;
-    font-family: sans-serif;
+    
 }
 
 #overall {
@@ -14,14 +19,21 @@ header {
 }
 
 #options {
-    font-family: sans-serif;
+    /*margin-top:1em;*/
+    
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
     background-color: #EEE;
     color: black;
     height: 100%;
     
 }
+ li{
+    margin-top:1em;
+    
+}
+    
+
 
 form input {
     display: block;
@@ -56,7 +68,9 @@ select {
     border: thin;
 }
 
-#sidebar {
+#main {
     padding: 10px 20px 0px 20px;
-    font-family: sans-serif;
+}
+h1{
+    margin-bottom: 10px;
 }

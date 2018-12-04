@@ -1,5 +1,7 @@
 *{
     font-family: sans-serif;
+    padding:0px;
+    margin:0px;
 }
 header {
     height: 40px;
@@ -20,10 +22,12 @@ body{
 #main,#details {
     grid-column: 2/3 ;
     margin-top:10px;
+    margin-left:1em;
 }
-/*#main{*/
-    /*display:float;*/
-/*}*/
+
+h1{
+    margin-bottom:1em;
+}
 button{
    width:100px;
    height: 35px;
@@ -40,19 +44,20 @@ a{
 }
 #desc h4,p{
     display:inline;
-    padding-bottom:10px;
+
 }
 
 
 #optionbar {
+    /*margin-top:1em;*/
     font-family: sans-serif;
-    grid-column:1/2 ;
-    background-color: #eee;
-    margin-top:10px;
-    margin-right:10px;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
     background-color: #EEE;
     color: black;
     height: 100%;
+    grid-column:1/2;
+}
+li{
+    margin-top:1em;
 }

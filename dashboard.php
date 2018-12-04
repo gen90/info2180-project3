@@ -3,7 +3,7 @@
 <?php include("schema.php"); ?>
 <html>
     <head>
-        <title>HireMe</title>
+        <title>HireMe - Dashboard</title>
         <link rel="stylesheet" href="dashboard.css" type="text/css" />
         <script src="dashboard.js"  ></script>
         <script>

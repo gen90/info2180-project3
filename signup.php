@@ -5,6 +5,7 @@
 <html>
     <head>
        <link rel="stylesheet" type="text/css" href="new_style.css">
+       <title> Sign Up</title>
       <!--<script src="sign_in.js" type="text/javascript"></script>-->
     </head>
     <body>

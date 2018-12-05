@@ -1,31 +1,32 @@
-window.onload = function(){
-    document.querySelector("#submit").addEventListener("click",function(){
-        var user = document.querySelector("#user");
-        var pword = document.querySelector("#password");
-        var result = document.querySelector("#results");
 
-        if(user.value=="" || pword.value==""){
-            user.classList.add("missing");
-            pword.classList.add("missing");
-            result.innerHTML = "Please enter a username and password";
-            return false;
-        }
+$(document).ready(function(){
+
+    $("#submit").click(function(){
+
+        var username = $("#user").val().trim();
+        var password = $("#password").val().trim();
+        console.log(username);
+        console.log(password);
         
-        else{
-            var request = new XMLHttpRequest();
-            request.onreadystatechange = validateUser;
-            request.open("POST","schema.php");
-            request.send();
+        if(username=="" || password==""){
+            $("#results").html("Please complete All Fields.")
         }
-        
-        function validateUser(e){
-            e.preventDefault();
-            if (request.readyState === XMLHttpRequest.DONE) {
-                if (request.status === 200) {
-                    console.log(request.responseText);
-                    result.innerHTML = request.responseText;
-                } 
-             }
+        if( username != "" && password != "" ){
+            $.ajax({
+                url:'signin.php',
+                type:'post',
+                data:{username:username,password:password},
+                success:function(response){
+                    
+                    if(response == 1){
+                        // $("#main-content").load("dashboard.php");
+                        window.location.href = "dashboard.php";
+                    }else{
+                       $("#results").html("Invalid Username or Password")
+                    }
+
+                }
+            });
         }
     });
-};
+});

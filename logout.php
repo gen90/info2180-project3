@@ -7,6 +7,6 @@ include "schema.php";
 
     session_destroy();
 
-    header('location: signin.php');
+    header('location: signin.html');
     exit;
    

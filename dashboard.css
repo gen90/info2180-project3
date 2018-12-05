@@ -24,7 +24,7 @@ header {
     /*margin-top:1em;*/
     font-family: sans-serif;
     padding-top: 10px;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
     background-color: #EEE;
     color: black;
     height: 100%;
@@ -38,7 +38,7 @@ h1 {
 }
 
 h3 {
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     margin-top: 20px;
 }
 table{

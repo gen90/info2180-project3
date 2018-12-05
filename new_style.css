@@ -5,37 +5,34 @@
 
 #main{
     text-align: center;
-    /*justify-items:center;*/
     display:flex;
     flex-direction:column;
     font-family: sans-serif;
-    margin-left:5px;
-    grid-row: 2;
-    grid-column: 2;
+    
+    margin-top:10px;
+    align-content:center;
+
     margin-top: 15px;
 }
 
+
+
 body{
-    display:grid;
-    /*grid-template-columns: 1fr 400px 1fr;*/
-    /*grid-template-rows: 50px 1fr 50px;*/
+    display:flex;
+    flex-direction:column;
+    align-content:center;
 }
-#main p{
-    grid-column: 2 span 1;
-    text-align:left;
-    margin-left:200px;
-    margin-right: 20px;
-}
-form{
-    padding:2em;
-    
-}
-form input{
+
+
+
+input{
+   align-self:center;
     margin:1em;
     width:350px ;
     height:30px;
     border-radius: 5px;
 }
+
 button{
     width: 150px;
     height: 40px;
@@ -44,7 +41,9 @@ button{
     color: white;
     border: thin;
     padding-top: 3px;
+    margin-bottom:10px;
     border-radius: 5px;
+    align-self:center;
 }
 header{
     height: 40px;
@@ -54,10 +53,6 @@ header{
     padding-left: 15px;
     font-size: 20px;
     font-family: sans-serif;
-    grid-column: 1 /4;
-    grid-row: 1;
+
 }
-#results{
-    grid-row: 3;
-    grid-column: 1/ 4;
-}
+
